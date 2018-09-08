@@ -1,0 +1,36 @@
+_add_a_and_b:
+   push   %ebx
+   mov    %eax, [%esp+8] 
+   mov    %ebx, [%esp+12]
+   add    %eax, %ebx 
+   pop    %ebx 
+   ret  
+
+_main:
+   push   3
+   push   2
+   call   _add_a_and_b 
+   add    %esp, 8
+   ret
+
+
+docker version£¨docker info£©
+sudo usermod -aG docker $USER
+sudo service docker start£¨sudo systemctl start docker£©
+docker image ls
+docker image rm [imageName]
+docker image pull hello-world
+docker container run hello-world
+docker container run -it ubuntu bash
+docker container kill [containID]
+docker container ls
+docker container ls --all
+docker container rm [containerID]
+docker image build
+docker image build -t koa-demo .
+docker container run -p 8000:3000 -it koa-demo:0.0.1 /bin/bash
+docker container start
+docker container stop
+docker container logs
+docker container exec
+docker container cp
